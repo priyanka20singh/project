@@ -5,7 +5,7 @@ private Integer id;
 private String  firstname;
 private String  lastname;
 private String  address;
-private Integer contact;
+private long contact;
 private String  email;
 
 public Integer getId() {
@@ -14,12 +14,14 @@ public Integer getId() {
 public void setId(Integer id) {
 	this.id = id;
 }
+//@NotBlank(message="Please enter name!")
 public String getFirstname() {
 	return firstname;
 }
 public void setFirstname(String firstname) {
 	this.firstname = firstname;
 }
+//@NotBlank(message="Please enter name!")
 public String getLastname() {
 	return lastname;
 }
@@ -32,12 +34,14 @@ public String getAddress() {
 public void setAddress(String address) {
 	this.address = address;
 }
-public Integer getContact() {
+//@NotBlank(message="Please enter your contact number!")
+public long getContact() {
 	return contact;
 }
-public void setContact(Integer contact) {
+public void setContact(long contact) {
 	this.contact = contact;
 }
+//@NotBlank(message="Please enter your email address!")
 public String getEmail() {
 	return email;
 }

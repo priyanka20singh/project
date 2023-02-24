@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.apptad.crud.model.Register;
 import com.apptad.crud.service.ServiceDelete;
@@ -24,7 +26,7 @@ public class CrudController {
 	ServiceInsert insertservice;
 	@GetMapping(value="/")
 	public String index() {
-		return "index";
+		return "welcome";
 	}
 	
 	@PostMapping(value="/insert")
@@ -32,10 +34,13 @@ public class CrudController {
 		System.out.println(registerModel.toString());
 		return insertservice.Insert(registerModel);
 	}	
+//	@RequestMapping(value="/",method =RequestMethod.GET)
+//	public String index() {
+//		return "welcome";
+//	}
 
 //	@Autowired
 //	ServiceInsert insertservice;
-//
 //	@PostMapping(value = "/insert")
 //	public String Insert(@RequestBody Register registerModel) {
 //		return insertservice.Insert(registerModel);
@@ -59,7 +64,6 @@ public class CrudController {
 
 	@Autowired
 	ServiceSearch serviceSearch;
-
 	@GetMapping(value = "/searching")
 	public List<Register> searchservice1(@RequestParam int id) {
 		return serviceSearch.SearchById(id);
